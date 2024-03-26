@@ -1,6 +1,11 @@
 
 $(document).ready(function () {
     $('.modal').modal();
+    $('.materialboxed').materialbox();
+    $('#clickMeButton').click(() => {
+        clickMe();
+    })
+    addCards(cardList);
 });
 const cardList = [
     {
@@ -39,14 +44,6 @@ const addCards = (items) => {
         $("#item-collection").append(itemToAppend)
     });
 }
-$(document).ready(function () {
-    $('.materialboxed').materialbox();
-    $('#clickMeButton').click(() => {
-        clickMe();
-    })
-    addCards(cardList);
-});
-
 
 function submitForm() {
     let formData = {};
