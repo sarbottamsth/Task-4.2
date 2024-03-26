@@ -1,0 +1,171 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CDN Link Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Icon Link -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Reference for the images, title, and watches -->
+    <!-- https://timex.com/collections/ufc-watches?page=1#product-7136656457811 -->
+
+    <title>UFC x Timex Watch</title>
+</head>
+
+<body>
+    <nav class="main-nav">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">UFC x Timex</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="collapsible.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="center-align banner" style="background-image: url(img/banner.webp);">
+        <div class="overlay"></div>
+        <div class="banner-body container">
+            <div class="col s12 center-align">
+                <h1 id="heading">Task 3.1 Demo: UFC Watch Collection</h1>
+                <p class="flow-text">This is a demo application that tries to use a few components from materialize
+                    and through this practical we try to have some fun with Materialize and its components
+                    showcasing UFC x Times Watch Collections.</p>
+            </div>
+
+            <div class="col s12 center-align">
+                <a class="waves-effect waves-light btn click-me-button" id="clickMeButton"><i
+                        class="material-icons left">auto_fix_high</i>Click Me</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="collection-wrap container" style="margin-top: 50px;">
+        <div class="row" id="item-collection">
+
+        </div>
+    </div>
+
+
+
+    <!-- Model Section -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#openModal">Contact Form</a>
+
+    <div id="openModal" class="modal modal-fixed-footer">
+        <div class="row modal-content">
+            <form id="myForm" class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 center-align">
+                        <a onclick="submitForm()" class="waves-effect waves-light btn" id="formSubmit">submit</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+        integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+        const cardList = [
+            {
+                title: "Timex UFC Pro Automatic 45mm Silicone Strap Watch",
+                image: "img/1.webp",
+                link: "https://timex.com/products/timex-ufc-pro-automatic-45mm-silicone-strap-watch-tw2v86500",
+                desciption: "Color: Black/Gold-Tone/Gold-Tone/Gold-Tone"
+            },
+            {
+                title: "Timex UFC King 45mm Silicone Strap Watch",
+                image: "img/2.webp",
+                link: "https://timex.com/products/timex-ufc-rush-52mm-pu-strap-watch-tw5m59100",
+                desciption: "Color: Black/Black"
+            },
+            {
+                title: "Timex UFC Rush 52mm PU Strap Watch",
+                image: "img/3.webp",
+                link: "https://timex.com/products/timex-ufc-king-45mm-silicone-strap-watch-tw2v99300",
+                desciption: "45 mm 2 Colors"
+            }
+        ]
+        const clickMe = () => {
+            alert("Thanks for clicking me. Hope you have a nice day!")
+        }
+
+
+        const addCards = (items) => {
+            items.forEach(item => {
+                let itemToAppend = '<div class="col s4 center-align">' +
+                    '<div class="card"><div class="card-image"><img src="' + item.image + '">' +
+                    '</div><div class="card-content">' +
+                    '<h4 class="card-title">' + item.title + '</div>' +
+                    '<p class="card-text">' + item.desciption + '</p>' +
+                    '<div class="card-action"><a href=' + item.link + '">Visit Page</a>' +
+                    '</a></div></div>';
+                $("#item-collection").append(itemToAppend)
+            });
+        }
+        $(document).ready(function () {
+            $('.materialboxed').materialbox();
+            $('#clickMeButton').click(() => {
+                clickMe();
+            })
+            addCards(cardList);
+        });
+
+
+      function submitForm() {
+            let formData = {};
+            formData.first_name = $('#first_name').val();
+            formData.last_name = $('#last_name').val();
+            formData.password = $('#password').val();
+            formData.email = $('#email').val();
+            console.log("Form Data Submitted: ", formData);
+        }
+    </script>
+
+</body>
+
+
+
+
+
+
+
+</html>

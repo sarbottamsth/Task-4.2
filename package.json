@@ -1,0 +1,14 @@
+{
+  "name": "task3.1",
+  "version": "1.0.0",
+  "description": "Task 3.1P",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sarbottam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
