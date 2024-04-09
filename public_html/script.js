@@ -45,8 +45,8 @@ async function displayItems() {
                 '</a></div></div>';
             $("#item-collection").append(itemToAppend)
         });
-    } catch (error) {
-        console.error('Error fetching items:', error);
+    } catch (err) {
+        console.error(err);
     }
 }
 
