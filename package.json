@@ -1,7 +1,7 @@
 {
-  "name": "task3.1",
+  "name": "task4.2",
   "version": "1.0.0",
-  "description": "Task 3.1P",
+  "description": "Task 4.2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,8 @@
   "author": "Sarbottam",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.1"
   }
 }

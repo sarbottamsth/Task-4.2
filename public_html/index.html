@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Reference for the images, title, and watches -->
+    <!-- Reference/Credit for the images, title, and watches -->
     <!-- https://timex.com/collections/ufc-watches?page=1#product-7136656457811 -->
 
     <title>UFC x Timex Watch</title>
@@ -60,32 +60,32 @@
 
     <div id="openModal" class="modal modal-fixed-footer">
         <div class="row modal-content">
-            <form id="myForm" class="col s12">
+            <form id="myForm" class="col s12" action="/submit" method="POST">
                 <div class="row">
                     <div class="input-field col s6">
-                        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
+                        <input id="item_name" type="text" class="validate" name="item_name">
+                        <label for="item_name">Item Name</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
+                        <input id="item_color" type="text" class="validate" name="item_color">
+                        <label for="item_color">Item Color</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
+                        <input id="item_image_url" type="text" class="validate" name="item_image_url">
+                        <label for="item_image_url">Image URL</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                        <input id="item_description" type="text" class="validate" name="item_description">
+                        <label for="item_description">Description</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 center-align">
-                        <a onclick="submitForm()" class="waves-effect waves-light btn" id="formSubmit">submit</a>
+                        <button type="submit">Submit</button>
                     </div>
                 </div>
             </form>
